@@ -1,7 +1,11 @@
 @extends('layout.base')
 
-@section('page.title', 'Просмотр поста')
+@section('page.title', $post->title)
 
 @section('content')
-    <h1>Просмотр поста</h1>
+    <a href="{{ route('blog') }}">Назад</a>
+    <h1 class="mb-5">
+        {{ $post->title }}
+    </h1>
+    <p>{!! $post->content !!}</p>
 @endsection

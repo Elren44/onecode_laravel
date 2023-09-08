@@ -9,9 +9,9 @@
         <div>Нет ни одного поста.</div>
     @else
         <ul class="d-flex flex-column gap-3 my-4 text-start align-items-center">
-            @foreach ($posts as $idx => $post)
+            @foreach ($posts as $post)
                 <li>
-                    <a href="{{ route('user.posts.show', $idx) }}">{{ $post->title }}</a>
+                    <a href="{{ route('blog.show', $post->id) }}">{{ $post->title }}</a>
                     <p>{!! $post->content !!}</p>
                 </li>
             @endforeach

@@ -14,6 +14,7 @@ class BlogController extends Controller
     {
 
         $post = (object) [
+            'id' => '123',
             'title' => 'Lorem ipsum dolor sit amet.',
             'content' => "Lorem ipsum <strong>dolor</strong> sit amet consectetur adipisicing elit. Placeat, quibusdam!",
         ];
@@ -45,7 +46,12 @@ class BlogController extends Controller
      */
     public function show(string $id)
     {
-        return view('blog.show');
+        $post = (object) [
+            'id' => '123',
+            'title' => 'Lorem ipsum dolor sit amet.',
+            'content' => "Lorem ipsum <strong>dolor</strong> sit amet consectetur adipisicing elit. Placeat, quibusdam!",
+        ];
+        return view('blog.show', compact('post'));
     }
 
     /**

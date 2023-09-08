@@ -1,1 +1,1 @@
-<footer class="py-3 border-top">footer</footer>
+<footer class="py-3 border-top">&copy; {{ config('app.name') }} {{ $year }}</footer>
