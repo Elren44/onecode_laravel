@@ -1,20 +1,24 @@
-@extends('layout.base')
+@extends('layout.main')
 
 @section('page.title', 'Список постов')
 
-@section('content')
-    <h1>Список постов</h1>
+@section('main.content')
+    <x-title>
+        {{ __('Список постов') }}
+    </x-title>
+
+    @include('blog.filter')
 
     @if (empty($posts))
-        <div>Нет ни одного поста.</div>
+        <div>{{ __('Нет ни одного поста.') }}</div>
     @else
-        <ul class="d-flex flex-column gap-3 my-4 text-start align-items-center">
+        <div class="row">
             @foreach ($posts as $post)
-                <li>
-                    <a href="{{ route('blog.show', $post->id) }}">{{ $post->title }}</a>
-                    <p>{!! $post->content !!}</p>
-                </li>
+                <div class="col-12 col-md-4">
+                    <x-post.card :post="$post" />
+                </div>
             @endforeach
-        </ul>
+        </div>
     @endif
+
 @endsection

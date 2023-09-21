@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('user')->middleware(['active'])->group(function () {
+Route::prefix('user')->group(function () {
 
     Route::redirect('/', '/user/posts')->name('user');
 

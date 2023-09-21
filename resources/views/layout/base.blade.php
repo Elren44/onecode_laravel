@@ -13,11 +13,12 @@
         href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic"
         rel="stylesheet" />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-
+    @stack('css')
 </head>
 
 <body class="body">
-    <div class="d-flex flex-column min-vh-100 justify-content-between text-center wrapper">
+    <div class="d-flex flex-column min-vh-100 justify-content-between wrapper">
+        @include('includes.alert')
         @include('includes.header')
         <main class="flex-grow-1 py-3">
             @yield('content')
@@ -25,6 +26,7 @@
         @include('includes.footer')
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.1/js/bootstrap.min.js" defer></script>
+    @stack('js')
 </body>
 
 </html>

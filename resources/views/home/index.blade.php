@@ -1,7 +1,9 @@
-@extends('layout.base')
+@extends('layout.main')
 
 @section('page.title', 'Главная страница')
 
-@section('content')
-    <h1>Главная</h1>
+@section('main.content')
+            <div class="text-center">
+                <h1>Главная</h1>
+            </div>
 @endsection

@@ -13,6 +13,12 @@ class LoginController extends Controller
 
     public function store(Request $request)
     {
-        return 'login store';
+
+        alert(__("Добро пожаловать!"), 'danger');
+
+//        if (true) {
+//            return redirect()->back()->withInput();
+//        }
+        return redirect()->route('user');
     }
 }

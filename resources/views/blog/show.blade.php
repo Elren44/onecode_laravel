@@ -1,11 +1,16 @@
-@extends('layout.base')
+@extends('layout.main')
 
 @section('page.title', $post->title)
 
-@section('content')
-    <a href="{{ route('blog') }}">Назад</a>
-    <h1 class="mb-5">
+@section('main.content')
+    <x-title>
         {{ $post->title }}
-    </h1>
+
+        <x-slot name="link">
+            <a href="{{route('blog')}}">
+                {{__('Назад')}}
+            </a>
+        </x-slot>
+    </x-title>
     <p>{!! $post->content !!}</p>
 @endsection

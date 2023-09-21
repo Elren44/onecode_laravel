@@ -3,6 +3,7 @@
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Route;
 
 
@@ -24,7 +25,11 @@ Route::get('/', function () {
 })->name('home');
 
 Route::redirect('/home', 'home')->name('home.redirect');
-
+Route::get('test', function () {
+    $response = response('')->header('Content-Type', 'application/json');
+    header_remove('X-Powered-By');
+    return $response;
+});
 /**
  * Group routes for auth
  */

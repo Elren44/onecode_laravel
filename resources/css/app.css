@@ -1,5 +1,4 @@
 * {
-    overflow-y: overlay;
     font-family: "Roboto", sans-serif !important;
 }
 html {
@@ -14,4 +13,13 @@ html {
 }
 .wrapper {
     overflow-x: hidden;
+}
+
+.container {
+    max-width: 720px !important;
+}
+.required::after {
+    content: "*";
+    margin-left: 3px;
+    color: brown;
 }
